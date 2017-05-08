@@ -1,0 +1,16 @@
+@import "./variable.scss";
+
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+@mixin divide {
+  border-bottom:1px solid #d2d2d2;
+}

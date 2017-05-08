@@ -36,6 +36,7 @@
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "eventsource-polyfill": "^0.9.6",
@@ -75,9 +76,11 @@
     "iscroll": "^5.2.0",
     "moment": "^2.18.1",
     "q": "^1.5.0",
+    "reset-css": "^2.2.0",
     "vue": "^2.3.2",
     "vue-router": "^2.5.3",
     "vue-scroll": "^2.0.2",
+    "vue-ydui": "^0.5.8",
     "vuex": "^2.3.1"
   }
 }

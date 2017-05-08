@@ -3,7 +3,8 @@ module.exports = {
   output: 'dist',
   indexFilePath: 'index.ejs', // app/index.ejs
   projectResolvePaths: [
-    'core', //  在app/core路径下寻找import的包
-    'assets' //  在app/assets路径下寻找import的包
+    'core', //  在app/core路径下寻找import的核心组件
+    'components', //  在app/core路径下寻找import的组件
+    'assets' //  在app/assets路径下寻找import的图片
   ]
 };
