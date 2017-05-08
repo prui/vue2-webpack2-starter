@@ -3,10 +3,57 @@
       <div class="drawer-menu-title" flex="cross:center">
         功能导航
       </div>
-      <div >
-        <div v-close-drawer-menu>
-          asdasdasd
-        </div>
+      <div>
+        <ScrollContent>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+          <div v-close-drawer-menu style="height:40px;">
+            asdasdasd
+          </div>
+        </ScrollContent>
       </div>
   </div>
 </template>
@@ -30,7 +77,7 @@ export default {
 @import "../../scss/mixin.scss";
 
 .drawer-menu-title {
-  color: $font-positive;
+  color: $positive-dark;
   // height: 30px;
   padding:10px;
   font-size:18px;
