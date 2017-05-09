@@ -1,13 +1,17 @@
 <template>
-  <div id="app">
-    <!-- @change-show="changeDrawerShow" @on-hide="onHide" @on-show="onShow" -->
-    <DrawerContent ref="drawer">
-      <DrawerMenu slot="menu"></DrawerMenu>
-      <div slot="content">
-          <button @click="toggleMenu">toggleMenu</button>
-      </div>
-    </DrawerContent>
-  </div>
+<div id="app">
+  <!-- @change-show="changeDrawerShow" @on-hide="onHide" @on-show="onShow" -->
+  <DrawerContent ref="drawer">
+    <DrawerMenu slot="menu"></DrawerMenu>
+    <div slot="content">
+      <NavBar></NavBar>
+      <transition name='page'>
+        <router-view></router-view>
+      </transition>
+      <!-- <button @click="toggleMenu">toggleMenu</button> -->
+    </div>
+  </DrawerContent>
+</div>
 </template>
 
 <script>
@@ -23,7 +27,7 @@ export default {
     };
   },
   methods: {
-    toggleMenu(){
+    toggleMenu() {
       this.$refs.drawer.show();
     }
   }
@@ -32,8 +36,7 @@ export default {
 
 
 
-<style lang="sass">
-@import "../scss/variable.scss";
+<style lang="sass">@import "../scss/variable.scss";
 @import "../scss/mixin.scss";
 
 #app {
@@ -42,5 +45,4 @@ export default {
     overflow-x: hidden;
 
 }
-
 </style>
