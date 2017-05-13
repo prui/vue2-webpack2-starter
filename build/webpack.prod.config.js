@@ -10,7 +10,7 @@ baseWebpackConfig.output.path += '/' + process.env.PLATFORM_ENV;
 baseWebpackConfig.resolve.alias['vue$'] ? baseWebpackConfig.resolve.alias['vue$'] = 'vue/dist/vue.min.js' :undefined;
 
 module.exports = merge(baseWebpackConfig, {
-  devtool: '#eval-source-map',
+  devtool: 'eval',
   debug: false,
   plugins: [
     new webpack.DefinePlugin({

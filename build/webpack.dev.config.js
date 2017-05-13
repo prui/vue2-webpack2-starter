@@ -11,7 +11,7 @@ Object.keys(baseWebpackConfig.entry).forEach(name => {
 });
 
 module.exports = merge(baseWebpackConfig, {
-  devtool: '#eval-source-map',
+  devtool: 'eval',
   // debug: true,
   plugins: [
     new webpack.DefinePlugin({
