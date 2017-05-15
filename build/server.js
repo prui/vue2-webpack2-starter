@@ -9,8 +9,32 @@ const chalk = require('chalk');
 
 const app = express();
 
-const compiler = webpack(webpackConfig, (err,stats)=>{
-  if (err) throw err;
+const compiler = webpack(webpackConfig);
+
+var devMiddleware = require('webpack-dev-middleware')(compiler, {
+  publicPath: webpackConfig.output.publicPath,
+  quiet: true,       // set true 是为了在这里不打印全部的stats
+  // stats: {
+  //   colors: true,
+  //   modules: false,
+  //   children: false,
+  //   chunks: false,
+  //   chunkModules: true
+  // }
+});
+
+var hotMiddleware = require('webpack-hot-middleware')(compiler);
+
+compiler.plugin('compilation', function(compilation) {
+  compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
+    hotMiddleware.publish({action: 'reload'})
+    cb()
+  })
+});
+
+compiler.plugin('done', stats => {
+  // my custom printing of build results
+  console.log('=================================================================================================');
   process.stdout.write(stats.toString({
     colors: true,
     modules: false,
@@ -18,19 +42,11 @@ const compiler = webpack(webpackConfig, (err,stats)=>{
     chunks: false,
     chunkModules: true
   }) + '\n');
-});
-
-var devMiddleware = require('webpack-dev-middleware')(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  quiet: true,
-  // stats: {
-  //   colors: true,
-  //   chunks: false
-  // }
+  console.log('=================================================================================================');
 });
 
 app.use(devMiddleware);
-app.use(require('webpack-hot-middleware')(compiler));
+app.use(hotMiddleware);
 
 config.DEV_SERVER.PROXY.historyApiFallback && app.use(require('connect-history-api-fallback')());
 config.DEV_SERVER.PROXY.isProxy && app.use( config.DEV_SERVER.PROXY.api, proxy(config.DEV_SERVER.PROXY.domain));
@@ -41,7 +57,7 @@ function listenNewPort(app, port) {
       return console.log(chalk.red(err));
     } else {
       var Url = 'http://' + ip.address() + ':' + port + '/';
-      open(Url);
+      // open(Url);
       console.log(chalk.green(Url));
     }
   }).on('error', function(e) {

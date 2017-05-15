@@ -4,11 +4,12 @@
   <DrawerContent ref="drawer">
     <DrawerMenu slot="menu"></DrawerMenu>
     <div slot="content">
-      <NavBar></NavBar>
+      <!-- <NavBar></NavBar> -->
       <transition name='page'>
         <router-view></router-view>
       </transition>
-      <!-- <button @click="toggleMenu">toggleMenu</button> -->
+      <button @click="toggleMenu">toggleMenu</button>
+
     </div>
   </DrawerContent>
 </div>

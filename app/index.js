@@ -15,6 +15,7 @@ import router from './pages/AppRouter';
 import {plugin as EventBusPlugin} from 'EventBus';
 import {plugin as PlatformPlugin} from 'Platform';
 
+
 /* css */
 
 import './scss/app.scss';
@@ -31,5 +32,6 @@ Vue.use(PlatformPlugin);
 
 /* 添加FastClick到body */
 FastClick.attach(document.body);
+
 
 new Vue({store, router}).$mount("router-app");
