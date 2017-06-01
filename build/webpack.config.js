@@ -96,10 +96,10 @@ module.exports = {
         exclude: /node_modules/
       }, {
         test: /\.html$/,
-        loader: 'vue-html'
+        loader: 'vue-html-loader'
       }, {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       }, {
         test: /\.css$/,
         loader: cssLoader
@@ -111,14 +111,14 @@ module.exports = {
         loader: lessLoader
       }, {
         test: /\.(png|jpg|gif|svg|jpeg)$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000, //低于10kb的直接变成base64
           name: 'assets/[name].[ext]?[hash]'
         }
       }, {
         test: /\.((eot|woff|ttf|svg)[\?]?.*)$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           name: 'assets/[name].[ext]?[hash]'
         }
