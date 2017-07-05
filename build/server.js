@@ -48,6 +48,7 @@ compiler.plugin('done', stats => {
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
+// app.use('/Api/', proxy('http://api.global-sci.org/'));
 config.DEV_SERVER.PROXY.historyApiFallback && app.use(require('connect-history-api-fallback')());
 config.DEV_SERVER.PROXY.isProxy && app.use( config.DEV_SERVER.PROXY.api, proxy(config.DEV_SERVER.PROXY.domain));
 
@@ -57,7 +58,7 @@ function listenNewPort(app, port) {
       return console.log(chalk.red(err));
     } else {
       var Url = 'http://' + ip.address() + ':' + port + '/';
-      // open(Url);
+      open(Url);
       console.log(chalk.green(Url));
     }
   }).on('error', function(e) {

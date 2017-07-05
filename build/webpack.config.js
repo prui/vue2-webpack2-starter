@@ -96,7 +96,8 @@ module.exports = {
         exclude: /node_modules/
       }, {
         test: /\.html$/,
-        loader: 'vue-html-loader'
+        loader: 'vue-html-loader',
+                exclude: /index.html/
       }, {
         test: /\.json$/,
         loader: 'json-loader'

@@ -2,7 +2,6 @@
 import 'reset-css/reset.css';
 /* 重置css */
 
-import $q from '$q';
 import Vue from 'vue';
 import YDUI from 'vue-ydui';
 import store from './stores';
@@ -12,8 +11,9 @@ import VueRouter from 'vue-router';
 import Components from './components';
 import router from './pages/AppRouter';
 
-import {plugin as EventBusPlugin} from 'EventBus';
-import {plugin as PlatformPlugin} from 'Platform';
+import { plugin as EventBusPlugin } from 'EventBus';
+import { plugin as PlatformPlugin } from 'Platform';
+import { plugin as $q } from '$q';
 
 
 /* css */
@@ -34,4 +34,4 @@ Vue.use(PlatformPlugin);
 FastClick.attach(document.body);
 
 
-new Vue({store, router}).$mount("router-app");
+new Vue({ store, router }).$mount("router-app");
